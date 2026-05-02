@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: '/api' });
-
-// ===== Trade CRUD =====
+const API = axios.create({ baseURL: `${import.meta.env.VITE_API_URL}/api` });// ===== Trade CRUD =====
 export const fetchTrades = () => API.get('/trades');
 export const fetchTrade = (id) => API.get(`/trades/${id}`);
 export const createTrade = (data) => API.post('/trades', data);
