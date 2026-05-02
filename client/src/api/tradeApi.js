@@ -1,4 +1,5 @@
 import axios from 'axios';
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
 const API = axios.create({ baseURL: `${import.meta.env.VITE_API_URL}/api` });// ===== Trade CRUD =====
 export const fetchTrades = () => API.get('/trades');
